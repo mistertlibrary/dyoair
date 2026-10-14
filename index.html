@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" data-size="medium" data-font="serif">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Design Your Own Assessment | WEHS Library Lyceum</title>
+<meta name="description" content="An independent reading project. Choose a book, log your reading in the Brain Bunker, pick a lens and a product, and design the rubric you’ll be graded on.">
+<link rel="canonical" href="https://mistertlibrary.github.io/dyoair/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="WEHS Library Lyceum">
+<meta property="og:title" content="Design Your Own Assessment">
+<meta property="og:description" content="An independent reading project. Choose a book, log your reading in the Brain Bunker, pick a lens and a product, and design the rubric you’ll be graded on.">
+<meta property="og:url" content="https://mistertlibrary.github.io/dyoair/">
+<meta property="og:image" content="https://mistertlibrary.github.io/librarylyceum/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="/librarylyceum/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/librarylyceum/favicon.png">
+<script>
+(function(){try{var d=document.documentElement,t=localStorage.getItem("lyceum-theme"),s=localStorage.getItem("lyceum-size"),f=localStorage.getItem("lyceum-font");if(t==="dark"||t==="contrast")d.dataset.theme=t;if(s==="small"||s==="large")d.dataset.size=s;if(f==="sans"||f==="dyslexic")d.dataset.font=f}catch(e){}})();
+</script>
+<style>
+@font-face{font-family:"EB Garamond";font-style:normal;font-weight:400 800;font-display:swap;src:url("/librarylyceum/fonts/eb-garamond-400-800.woff2") format("woff2")}
+@font-face{font-family:"EB Garamond";font-style:italic;font-weight:400 800;font-display:swap;src:url("/librarylyceum/fonts/eb-garamond-400-800-italic.woff2") format("woff2")}
+@font-face{font-family:"Libre Franklin";font-style:normal;font-weight:100 900;font-display:swap;src:url("/librarylyceum/fonts/libre-franklin-100-900.woff2") format("woff2")}
+@font-face{font-family:"OpenDyslexic";font-weight:400;font-display:swap;src:url("/librarylyceum/fonts/opendyslexic-400.woff2") format("woff2")}
+@font-face{font-family:"OpenDyslexic";font-weight:700;font-display:swap;src:url("/librarylyceum/fonts/opendyslexic-700.woff2") format("woff2")}
+:root{--paper:#FFFFFF;--ink:#111111;--gray:#555555;--tape:rgba(0,0,0,.16);--dot:rgba(0,0,0,.08);--focus:#C52122;--night:#111111;--night-ink:#FFFFFF;--clip:#FFFFFF;
+--serif:"EB Garamond",Garamond,"Iowan Old Style",Georgia,serif;--sans:"Libre Franklin","Franklin Gothic Medium",system-ui,sans-serif;
+--type:"Courier New",Courier,"Nimbus Mono PS",monospace;--cut:"Arial Black","Helvetica Neue",Arial,sans-serif;--base:19px;color-scheme:light}
+[data-theme="dark"]{--paper:#161616;--ink:#F2F2F2;--gray:#BDBDBD;--tape:rgba(255,255,255,.22);--dot:rgba(255,255,255,.07);--focus:#F2716F;--night:#000000;--night-ink:#F2F2F2;color-scheme:dark}
+[data-theme="contrast"]{--paper:#000000;--ink:#FFFFFF;--gray:#FFFFFF;--tape:rgba(255,255,255,.35);--dot:transparent;--focus:#FFD54A;--night:#000000;--night-ink:#FFFFFF;color-scheme:dark}
+[data-size="small"]{--base:17px}[data-size="large"]{--base:22px}
+[data-font="sans"]{--serif:var(--sans)}
+[data-font="dyslexic"]{--serif:"OpenDyslexic",sans-serif;--sans:"OpenDyslexic",sans-serif;--type:"OpenDyslexic",sans-serif;--cut:"OpenDyslexic",sans-serif}
+*{box-sizing:border-box}
+html{font-size:var(--base);scroll-padding-top:4.5rem;scroll-behavior:smooth}
+body{margin:0;background:var(--paper) radial-gradient(var(--dot) 1px,transparent 1.3px) 0 0/7px 7px;color:var(--ink);font-family:var(--serif);font-size:1.05rem;line-height:1.6}
+a{color:var(--ink);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
+.skip{position:absolute;left:-999px;top:0;background:var(--paper);color:var(--ink);padding:.5rem 1rem;z-index:20;font-family:var(--type)}
+.skip:focus{left:1rem;top:1rem}
+.topbar{background:var(--night);color:var(--night-ink);font-family:var(--sans);font-size:.72rem;letter-spacing:.06em;padding:.55rem 1.2rem;text-align:center}
+.topbar a{color:var(--night-ink);text-decoration:none;border-bottom:1px solid currentColor}
+.wrap{max-width:46rem;margin:0 auto;padding-inline:16px;padding-block:0 4rem}
+h1,h2,h3,h4{text-align:center;text-wrap:balance;margin:0}
+.mast{text-align:center;padding-block:2rem 1.2rem}
+.stamp{display:inline-block;max-width:100%;line-height:1.5;background:var(--ink);color:var(--paper);font:700 .72rem var(--type);letter-spacing:.22em;text-transform:uppercase;padding:3px 10px;transform:rotate(-2deg)}
+h1{font-family:var(--cut);text-transform:uppercase;font-size:clamp(1.9rem,7.5vw,3.3rem);line-height:1.12;margin-top:.8rem}
+h1 .w{display:inline-block;padding:0 .12em}
+h1 .w:nth-child(2){background:var(--ink);color:var(--paper);transform:rotate(-1.5deg)}
+h1 .w:nth-child(4){border:4px solid var(--ink);transform:rotate(1.2deg)}
+nav.map{position:sticky;top:env(safe-area-inset-top,0px);z-index:8;background:var(--paper);border-bottom:4px solid var(--ink);margin-inline:-16px;padding:.55rem 16px}
+nav.map ul{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:0;padding:0}
+nav.map a{display:block;font:700 .74rem var(--type);text-transform:uppercase;letter-spacing:.08em;text-decoration:none;border:2px solid var(--ink);background:var(--paper);padding:5px 10px}
+nav.map li:nth-child(odd) a{transform:rotate(-1.5deg)}
+nav.map li:nth-child(even) a{transform:rotate(1.5deg)}
+nav.map a:hover{background:var(--ink);color:var(--paper)}
+.intro{background:var(--paper);border:3px solid var(--ink);box-shadow:8px 8px 0 var(--ink);padding:1.4rem clamp(16px,5vw,2.2rem) .6rem;margin:2.2rem auto 0;position:relative;font-family:var(--type);font-size:.95rem}
+.intro::before,.intro::after{content:"";position:absolute;top:-12px;width:80px;height:24px;background:var(--tape)}
+.intro::before{left:-16px;transform:rotate(-28deg)}
+.intro::after{right:-16px;transform:rotate(28deg)}
+.intro p{margin:0 0 .8rem}
+section{padding-top:3.2rem}
+h2{margin-bottom:1rem}
+h2 span{display:inline-block;background:var(--ink);color:var(--paper);font-family:var(--cut);text-transform:uppercase;font-size:clamp(1.2rem,4.5vw,1.65rem);padding:6px 16px;transform:rotate(-1.5deg)}
+section:nth-of-type(even) h2 span{transform:rotate(1.2deg)}
+.clip{width:min(210px,58vw);margin:0 auto 1.4rem;background:var(--clip);border:2px solid var(--ink);padding:8px;position:relative;transform:rotate(2deg)}
+section:nth-of-type(even) .clip{transform:rotate(-2deg)}
+.clip::before{content:"";position:absolute;top:-10px;left:50%;width:64px;height:20px;background:var(--tape);transform:translateX(-50%) rotate(-4deg)}
+.clip svg{display:block;width:100%;height:auto;filter:grayscale(1) contrast(1.3)}
+.block{margin:0 auto 1.6rem}
+.block h3{font-family:var(--cut);text-transform:uppercase;font-size:.98rem;margin-bottom:.7rem;text-decoration:underline;text-decoration-thickness:4px;text-underline-offset:5px}
+p{margin:0 0 .75rem}
+.list{list-style:none;padding:0;margin:0 0 .75rem;display:grid;gap:8px}
+.list li{background:var(--paper);border:2px solid var(--ink);padding:8px 12px}
+.block .list li:nth-child(odd){transform:rotate(-.5deg)}
+.block .list li:nth-child(even){transform:rotate(.5deg)}
+.lens-group{margin-top:2.2rem}
+.lens-h{margin-bottom:1rem}
+.lens-h span{display:inline-block;font:700 .82rem var(--type);text-transform:uppercase;letter-spacing:.14em;border-top:3px solid var(--ink);border-bottom:3px solid var(--ink);padding:4px 10px;background:var(--paper)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,19rem),1fr));gap:26px;margin-bottom:26px}
+.card{min-width:0;background:var(--paper);border:3px solid var(--ink);box-shadow:6px 6px 0 var(--ink);padding:1.2rem 1rem .5rem;position:relative}
+.cards .card:nth-child(odd){transform:rotate(-.6deg)}
+.cards .card:nth-child(even){transform:rotate(.6deg)}
+.card::before{content:"";position:absolute;top:-11px;left:50%;width:76px;height:22px;background:var(--tape);transform:translateX(-50%) rotate(-3deg)}
+.card h4{font-family:var(--cut);text-transform:uppercase;font-size:1.02rem;margin-bottom:.7rem}
+.card .sub{text-align:center;font:700 .7rem var(--type);text-transform:uppercase;letter-spacing:.14em;color:var(--gray);margin-bottom:2px}
+.card .list li{border-width:1.5px;padding:6px 10px}
+.spec{border:2px dashed var(--ink);padding:10px 12px 2px;margin:0 0 .75rem;font-size:.95rem}
+.spec .list li{border:0;padding:0 0 0 14px;position:relative;background:transparent}
+.spec .list li::before{content:"*";position:absolute;left:0;font-weight:700}
+.orig .olabel{font:700 .72rem var(--type);text-transform:uppercase;letter-spacing:.1em;border:1.5px solid var(--ink);padding:1px 6px;margin-right:4px;white-space:nowrap}
+.bench{list-style:none;padding:0;margin:0 0 .75rem}
+.bench li{display:grid;grid-template-columns:8em 1fr;gap:14px;align-items:baseline;border-bottom:3px solid var(--ink);padding:10px 0}
+.bench li>span{min-width:0}
+.wk{font-family:var(--cut);text-transform:uppercase;font-size:.85rem}
+.fill{font-family:var(--type);font-weight:700;border:3px solid var(--ink);padding:14px;text-align:center;background:var(--paper)}
+.rows{display:grid;gap:26px;margin:0 auto}
+.row{background:var(--paper);border:3px solid var(--ink);padding:1.1rem 1.1rem .4rem;position:relative}
+.row:nth-child(odd){transform:rotate(-.4deg)}
+.row:nth-child(even){transform:rotate(.4deg)}
+.row h3{font-family:var(--cut);text-transform:uppercase;font-size:1.02rem;margin-bottom:.5rem}
+.pts{position:absolute;top:-14px;right:14px;background:var(--ink);color:var(--paper);font:700 .74rem var(--type);text-transform:uppercase;letter-spacing:.08em;padding:3px 9px;transform:rotate(3deg)}
+.def{font-family:var(--type);font-style:italic;text-align:center;color:var(--gray);font-size:.92rem}
+.success b{font-family:var(--type);text-transform:uppercase;font-size:.82rem;letter-spacing:.06em}
+footer{background:var(--night);color:var(--night-ink);text-align:center;font-family:var(--sans);font-size:.85rem;padding:2.5rem 1rem 5rem;margin-top:4rem}
+footer a{color:var(--night-ink)}
+footer .big{font-family:var(--type);font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:1rem;margin:0 0 .6rem}
+.a11y-toggle{position:fixed;right:1rem;bottom:calc(1rem + env(safe-area-inset-bottom,0px));z-index:15;width:3rem;height:3rem;border-radius:50%;border:3px solid var(--paper);background:var(--ink);color:var(--paper);font-family:var(--serif);font-size:1.15rem;font-weight:600;cursor:pointer;box-shadow:3px 3px 0 var(--gray)}
+.a11y-panel{position:fixed;right:1rem;bottom:4.6rem;z-index:15;width:16.5rem;max-width:calc(100vw - 2rem);background:var(--paper);color:var(--ink);border:3px solid var(--ink);box-shadow:6px 6px 0 var(--ink);padding:1rem;font-family:"Libre Franklin",system-ui,sans-serif;font-size:14px}
+.a11y-group{border:0;margin:0 0 .8rem;padding:0}
+.a11y-group legend{font-weight:700;margin-bottom:.4rem;padding:0}
+.a11y-group .opts{display:flex;flex-wrap:wrap;gap:.3rem}
+.a11y-group button{font:inherit;padding:.3rem .65rem;border:1px solid var(--ink);background:transparent;color:var(--ink);cursor:pointer}
+.a11y-group button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.sp{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:.4rem 0 .8rem}
+.sp-col{min-width:0;border:2px solid var(--ink);padding:.6rem .7rem;font-size:.9rem;background:var(--paper)}
+.sp-succ{border-width:3px}
+.sp-h{font:700 .72rem var(--type);text-transform:uppercase;letter-spacing:.1em;text-align:center;border-bottom:2px solid var(--ink);padding-bottom:4px;margin-bottom:6px}
+.sp-col p{margin:0}
+.lvl{margin-bottom:.45rem}
+.lvl-name{display:inline-block;font:700 .66rem var(--type);text-transform:uppercase;letter-spacing:.1em;background:var(--ink);color:var(--paper);padding:1px 6px;margin-bottom:3px}
+.lvl ul{margin:0;padding-left:1.1em}
+.lvl li{margin-bottom:2px}
+.row.wide .sub{text-align:center;font:700 .7rem var(--type);text-transform:uppercase;letter-spacing:.14em;color:var(--gray);margin-bottom:2px}
+.rows+.cards{margin-top:2rem}
+.rb{border:3px solid var(--ink);box-shadow:8px 8px 0 var(--ink);background:var(--paper);padding:1.2rem clamp(14px,4vw,1.6rem)}
+.rb label{display:block;font:700 .74rem var(--type);text-transform:uppercase;letter-spacing:.08em;margin:.6rem 0 .2rem}
+.rb input,.rb select,.rb textarea{width:100%;font:1rem var(--serif);color:var(--ink);background:var(--paper);border:2px solid var(--ink);padding:.45rem .55rem;border-radius:0}
+.rb textarea{resize:vertical;line-height:1.45}
+.rb input:focus-visible,.rb select:focus-visible,.rb textarea:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+.rb-meta{display:grid;grid-template-columns:auto 1fr;gap:.4rem .8rem;align-items:center;margin-bottom:1rem}
+.rb-meta label{margin:0}
+.rb-rows{display:grid;gap:10px;margin-bottom:1.2rem}
+.rb-row{position:relative;border:2px dashed var(--ink);padding:.9rem .8rem .3rem}
+.rb-row h3{font:1rem var(--cut);text-transform:uppercase;margin-bottom:.3rem}
+.rb-row .pts{top:-12px}
+.rb-row p{font-size:.92rem}
+.rb-bank{display:grid;gap:16px}
+.rb-slot{border:3px solid var(--ink);padding:.8rem;margin:0;min-width:0}
+.rb-slot legend{font:.95rem var(--cut);text-transform:uppercase;padding:0 .4rem}
+.rb-actions{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:center;margin-top:1.2rem}
+.rb button{font:700 .8rem var(--type);text-transform:uppercase;letter-spacing:.08em;border:3px solid var(--ink);background:var(--ink);color:var(--paper);padding:.5rem .9rem;cursor:pointer}
+.rb button.ghost{background:var(--paper);color:var(--ink)}
+#rb-status{font:.8rem var(--type)}
+.rb-confirm,.rb-fallback{border:2px solid var(--ink);padding:.8rem;margin-top:1rem;text-align:center}
+.rb-print-view{display:none}
+@media (max-width:640px){.sp{grid-template-columns:1fr}.rb-meta{grid-template-columns:1fr}}
+@media (max-width:540px){.bench li{grid-template-columns:1fr;gap:2px}}
+@media (prefers-reduced-motion:reduce){*{transform:none!important;animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+@media print{
+  body{background:#fff;color:#000;font-size:11pt}
+  nav.map,.skip,.topbar,.a11y-toggle,.a11y-panel,footer{display:none!important}
+  *{transform:none!important;box-shadow:none!important}
+  .card,.row,.block,.bench li,.clip{break-inside:avoid}
+  section{padding-top:1.2rem}
+}
+@media print{
+  html.print-rubric .topbar,html.print-rubric .mast,html.print-rubric nav.map,html.print-rubric main>*:not(#builder),html.print-rubric #builder>*:not(.rb-print-view),html.print-rubric footer,html.print-rubric .a11y-toggle{display:none!important}
+  html.print-rubric .rb-print-view{display:block!important;font:10.5pt/1.35 Georgia,serif;color:#000}
+  .rb-print-view h1{font:18pt "Arial Black",Arial,sans-serif;text-transform:uppercase;text-align:center;margin:0 0 6pt}
+  .rb-print-view .pv-meta{text-align:center;font:10pt "Courier New",monospace}
+  .rb-print-view table{border-collapse:collapse;width:100%}
+  .rb-print-view th,.rb-print-view td{border:1.5px solid #000;padding:5pt;vertical-align:top;text-align:left}
+  .rb-print-view th{font:700 8pt "Courier New",monospace;text-transform:uppercase}
+  .rb-print-view tr{break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main-content">Skip to content</a>
+<div class="topbar"><a href="/librarylyceum/guides.html">WEHS Library Lyceum</a> research guides presents...</div>
+<div class="wrap">
+<header class="mast">
+<span class="stamp">Reading for Pleasure, Reading for Fun</span>
+<h1><span class="w">Design</span> <span class="w">Your</span> <span class="w">Own</span> <span class="w">Assessment</span></h1>
+</header>
+<nav class="map" aria-label="Sections">
+<ul>
+<li><a href="#bunker">Brain Bunker</a></li>
+<li><a href="#product">Your Product</a></li>
+<li><a href="#benchmarks">Benchmarks</a></li>
+<li><a href="#rubric">Rubric</a></li>
+<li><a href="#builder">Rubric Builder</a></li>
+</ul>
+</nav>
+<main id="main-content">
+<div class="intro">
+<p>You know what, kiddo? We want you to have fun working on this assignment. We ALWAYS want students to derive a modicum of pleasure from what we do in class, even if it’s tedious or challenging.</p>
+<p>We suspect students read best when they’re allowed to select a book, that they work best when the specifics of the assignment adhere to their own design. For this independent reading unit, you’ll pick the book, pick the product, and help decide how it’s graded.</p>
+<p>The work you submit should be singular. It ought to stand by itself, just outside the ordinary. It should be unusual, uncommon, even strange.</p>
+<p>It also has an audience. If you’re comfortable with the prospect, finished work will go on display in the library, beside or within the book, for the next reader to find. Make something that tells them whether they should pick it up or leave it alone.</p>
+<p>Your book is the only element that’s set in stone. Once you choose it, all the particulars are up to you.</p>
+<p>Here’s how it works: you’ll read and log your thinking in the Brain Bunker; choose a lens and a product; hit your benchmarks; and design the rubric you’ll be graded on.</p>
+<p>Let’s get it!</p>
+</div>
+<section id="bunker" aria-labelledby="bunker-h"><h2 id="bunker-h"><span>The Brain Bunker</span></h2><div class="clip"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 200" role="img" aria-hidden="true" focusable="false">
+  
+  
+  <path d="M10 182 Q120 170 230 182 L230 192 L10 192 Z" fill="#8C7A5B"/>
+  <path d="M28 182 L28 118 Q28 52 120 52 Q212 52 212 118 L212 182 Z" fill="#9A9A92" stroke="#2F1414" stroke-width="4"/>
+  <path d="M44 128 L196 128" stroke="#7E7E77" stroke-width="3"/>
+  <path d="M40 156 L200 156" stroke="#7E7E77" stroke-width="3"/>
+  <rect x="58" y="98" width="124" height="34" rx="6" fill="#2F1414"/>
+  <g>
+    <path d="M78 132 Q74 106 96 104 Q100 92 116 96 Q126 88 138 96 Q156 94 158 108 Q170 114 164 132 Z" fill="#F4A6B4" stroke="#2F1414" stroke-width="3"/>
+    <path d="M96 112 Q104 106 110 114 M124 104 Q130 112 138 106 M144 118 Q150 112 156 120" fill="none" stroke="#C9687A" stroke-width="2.5" stroke-linecap="round"/>
+    <circle cx="108" cy="122" r="7" fill="#FFFFFF" stroke="#2F1414" stroke-width="2"/>
+    <circle cx="132" cy="122" r="7" fill="#FFFFFF" stroke="#2F1414" stroke-width="2"/>
+    <circle cx="110" cy="124" r="3" fill="#2F1414"/>
+    <circle cx="130" cy="120" r="3" fill="#2F1414"/>
+  </g>
+  <path d="M84 102 Q86 78 120 76 Q154 78 156 102 Z" fill="#C52122" stroke="#2F1414" stroke-width="3"/>
+  <rect x="80" y="98" width="80" height="7" rx="3" fill="#2F1414"/>
+  <path d="M176 60 L176 22 L198 22" fill="none" stroke="#2F1414" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="196" y="14" width="16" height="16" rx="3" fill="#C52122" stroke="#2F1414" stroke-width="3"/>
+  <g transform="rotate(-8 60 40)">
+    <rect x="34" y="20" width="52" height="40" fill="#FFE27A" stroke="#2F1414" stroke-width="2.5"/>
+    <text x="60" y="38" font-family="Georgia, serif" font-size="11" text-anchor="middle" fill="#2F1414">p. 47</text>
+    <text x="60" y="52" font-family="Georgia, serif" font-size="13" text-anchor="middle" fill="#C52122">!!</text>
+  </g>
+</svg>
+</div>
+<div class="block"><h3>What the Brain Bunker Is</h3><p>The Brain Bunker is a private record of your reading. Only you and your teacher will see it.</p>
+<p>I don&#x27;t want a book report here! Don&#x27;t summarize, don&#x27;t write out a checklist, don&#x27;t fixate on literary elements and narrative structure. Instead, record captivating moments: lines that make you stop reading, questions you still can&#x27;t answer, anything that annoyed you, any word you just can&#x27;t forget.</p>
+<p>Your teacher will read your log; sometimes, they&#x27;ll even write back.</p></div>
+<div class="block"><h3>Ground Rules</h3><ul class="list"><li>Start every entry from a page in your book. Write down the page number.</li><li>No summaries. An entry that only retells what happened doesn&#x27;t count.</li><li>Use at least three different entry types before the project ends.</li><li>Aim for at least two entries a week.</li><li>The log is graded complete or incomplete. It counts toward your Effort score. Easy points, kids!</li></ul></div>
+<div class="block"><h3>Entry Types</h3><ul class="list"><li><b>Stopped me:</b> a line that landed. Copy it and say why.</li><li><b>Bugged me:</b> something that annoyed, confused, or bothered you.</li><li><b>Reminded me:</b> a connection to your life, a song, a show, the news.</li><li><b>Wondered:</b> a question the book raised and didn&#x27;t answer.</li><li><b>Called it:</b> a prediction, and whether you were right.</li><li><b>Would steal:</b> a writing move you&#x27;d borrow for your own work.</li></ul></div>
+<div class="block"><h3>What an Entry Can Look Like</h3><ul class="list"><li>A photo of the page with sticky notes or pen marks (IF YOU OWN THE BOOK!)</li><li>A voice memo, 30 seconds or so</li><li>A quick sketch</li><li>A screenshot with a quote and a sentence about it</li><li>A song link with one line on why</li><li>A few written sentences</li></ul>
+<p>Mix it up! Whatever you choose, include a specific page number.</p></div>
+</section>
+<section id="product" aria-labelledby="product-h"><h2 id="product-h"><span>Choosing Your Product</span></h2><div class="clip"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 200" role="img" aria-hidden="true" focusable="false">
+<path d="M20 150 Q70 128 120 146 Q170 128 220 150 L220 182 Q170 162 120 178 Q70 162 20 182 Z" fill="#FFFFFF" stroke="#111" stroke-width="4" stroke-linejoin="round"/>
+<path d="M120 146 L120 178" stroke="#111" stroke-width="4"/>
+<path d="M34 160 Q70 146 106 158 M34 168 Q70 154 106 166 M134 158 Q170 146 206 160 M134 166 Q170 154 206 168" fill="none" stroke="#777" stroke-width="2.5" stroke-linecap="round"/>
+<circle cx="84" cy="92" r="36" fill="#FFFFFF" stroke="#111" stroke-width="6"/>
+<circle cx="156" cy="92" r="36" fill="#FFFFFF" stroke="#111" stroke-width="6"/>
+<path d="M118 88 Q120 78 122 88" fill="none" stroke="#111" stroke-width="6" stroke-linecap="round"/>
+<path d="M48 84 L20 70 M192 84 L220 70" stroke="#111" stroke-width="6" stroke-linecap="round"/>
+<circle cx="84" cy="92" r="17" fill="#FFFFFF" stroke="#111" stroke-width="3"/>
+<circle cx="90" cy="98" r="8" fill="#111"/>
+<circle cx="156" cy="92" r="17" fill="#FFFFFF" stroke="#111" stroke-width="3"/>
+<circle cx="150" cy="86" r="8" fill="#111"/>
+<path d="M60 70 Q66 64 72 68" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" opacity=".9"/>
+</svg>
+</div>
+<div class="block"><h3>Pick a Lens, Then a Product</h3><p>Every product starts with a question about your book. We&#x27;ll call these questions lenses.</p>
+<ul class="list"><li>How this book works</li><li>Who this book is for/who should skip it</li><li>Where this book meets me</li><li>What else could happen</li><li>Talking back</li><li>The world of the book</li></ul>
+<p>Choose the lens that best fits what you want to say; then choose a product within it. You&#x27;ll decide by the end of week one and you can switch at the midpoint conference.</p></div>
+<div class="lens-group"><h3 class="lens-h"><span>How this book works</span></h3><div class="cards">
+<article class="card"><h4>Analytical Review</h4><p>Prefer a more traditional assignment? This is the way to go! Compose a quick summary (no more than three sentences!) of your book’s plot, then spend some time analyzing and interpreting its content. Your final product can be a podcast, a polished piece of writing, a video essay, or something in-between.</p>
+<div class="spec"><p><b>Spec:</b> 700 to 1,000 words, or a 5 to 8 minute podcast or video essay. Ground your analysis in at least three specific passages.</p></div></article>
+<article class="card"><h4>Exhibit</h4><p>Curate a small museum exhibit for your book. Choose five objects, real or imagined, that unlock how the book works: a prop, a setting, a symbol, a document a character would own.</p>
+<div class="spec"><p><b>Spec:</b> an introductory panel of 100 to 150 words, plus five object labels of 60 to 120 words each. Each label names the object, points to where it appears, and explains why it matters.</p></div></article>
+</div></div>
+<div class="lens-group"><h3 class="lens-h"><span>Who this book is for</span></h3><div class="cards">
+<article class="card"><h4>Shelf Talk</h4><p>Booksellers tuck small handwritten cards beside books they love. They&#x27;re called shelf talkers. Make one for your book, then go longer.</p>
+<div class="spec"><p><b>Spec:</b> a shelf-talker card of 40 to 75 words for the library display, plus one longer review: a 60 to 90 second video or 300 to 500 written words. Your review must answer two questions: Who should read this? Who should skip it, and why?</p></div></article>
+<article class="card"><h4>Playlist</h4><p>Curate a playlist based on the characters, content, and/or culture of your book! Annotate each song, explaining why you select it and connecting it to other tracks in your queue. Remember that a good DJ is a storyteller! Think about the thematic content of lyrics, overall emotion of each song, and your set’s sense of pace. People want to dance all night—lend a hand!</p>
+<div class="spec"><p><b>Spec:</b> 8 to 12 tracks. Two to four sentences of annotation per track. A liner note of 100 to 150 words that introduces the set and explains its order.</p></div></article>
+</div></div>
+<div class="lens-group"><h3 class="lens-h"><span>Where this book meets me</span></h3><div class="cards">
+<article class="card"><h4>Your Way In</h4><p>Explain how you relate to the story. This should take the form of an introspective consideration of both your life and the book’s content. Where do they converge, coming together? Where do they diverge, pulling apart? What connections are most important? Where did you find common ground?</p>
+<div class="spec"><p><b>Spec:</b> 700 to 1,000 words, or 5 to 7 minutes of audio or video. Anchor your reflection in at least three passages from the book.</p></div></article>
+</div></div>
+<div class="lens-group"><h3 class="lens-h"><span>What else could happen</span></h3><div class="cards">
+<article class="card"><h4>Alternative Ending</h4><p>Devise another ending to the book. Bear in mind that your conclusion might require some adjustments to the plot! Cut as much as you want, and let us know where you imagine your version taking over from the original (chapter, page number, etc.).</p>
+<div class="spec"><p><b>Spec:</b> 1,200 to 2,000 words, plus an author&#x27;s note of 100 to 150 words on what you changed and why.</p></div></article>
+<article class="card"><h4>Fanfiction</h4><p>Fanfiction is a type of writing that uses existing intellectual property, like characters and settings, as the basis for a new piece of writing. So long as your fic demonstrates an understanding of your book, you can go wherever you want with it.</p>
+<div class="spec"><p><b>Spec:</b> 1,200 to 2,000 words, plus an author&#x27;s note of 100 to 150 words naming what from the book your story depends on.</p></div></article>
+</div></div>
+<div class="lens-group"><h3 class="lens-h"><span>Talking back</span></h3><div class="cards">
+<article class="card"><h4>Author Interview</h4><p>Imagine a list of at least ten questions you’d like to ask the author of your book. Remember that good interviewers do their homework and have their own opinions! See what a little research on your author reveals and start from there.</p>
+<div class="spec"><p><b>Spec:</b> 10 to 12 questions, each followed by one sentence on what prompted it. Consult at least three sources about the author and cite them in MLA style.</p></div></article>
+<article class="card"><h4>Media Appearance</h4><p>Bring your book&#x27;s world into the media. Book a character on a talk show, or cover the story as news.</p>
+<div class="spec"><p><b>Spec, choose one:</b></p><ul class="list"><li>A talk show script of 4 to 6 pages, or a 5 to 7 minute performance, live or recorded.</li><li>A feature, profile, or opinion column of 600 to 900 words that treats the book&#x27;s world as real.</li><li>An advertisement for a good or service from the book&#x27;s world: one printed page or a 30 to 60 second video, plus a 100 to 150 word note on what it reveals about the book.</li></ul></div>
+<p class="orig"><span class="olabel">Talk Show</span> Whether you want to go classy or trashy, a talk show is a surefire way to capture an audience’s attention. Imagine how your characters could come to life in front of a live crowd, then draft a script to make it happen. You can either perform for your peers in class or record something ahead of time.</p>
+<p class="orig"><span class="olabel">Periodical</span> Turn in a newspaper or magazine article related to your book! Possible angles include opinion columns reacting to an event, feature articles profiling a fictional character as though they were a real person, or an advertisement for a featured good or service.</p></article>
+</div></div>
+<div class="lens-group"><h3 class="lens-h"><span>The world of the book</span></h3><div class="cards">
+<article class="card"><h4>Menu</h4><p>Craft a lavish, five-course dinner based on the characters, content, and/or culture of your book! Select ingredients, cooking techniques, and beverages that relate to key elements of the text. Remember that atmosphere—decor, environment, place settings, and service—are an essential aspect of dining out.</p>
+<div class="spec"><p><b>Spec:</b> five courses and a drink, each with a 50 to 100 word description tied to the book. Add a note of about 100 words on the setting: decor, place settings, service. Cooking is optional.</p></div></article>
+<article class="card"><h4>Map</h4><p>Map the places that matter in your book, real or invented.</p>
+<div class="spec"><p><b>Spec:</b> 6 to 10 locations, each with a 50 to 100 word annotation tied to a page. Draw it by hand or build it digitally.</p></div></article>
+</div></div>
+<div class="lens-group"><h3 class="lens-h"><span>Any lens</span></h3><div class="cards">
+<article class="card"><h4>Your Brilliant Idea</h4><p>Want to do something outside the box? Let’s talk!</p>
+<div class="spec"><p><b>Spec:</b> you set it. Your scope statement at the midpoint conference defines what you&#x27;ll make, and your teacher approves it. Games and graphic novels live here.</p></div></article>
+</div></div>
+<div class="block"><h3>Formats (Optional)</h3><p>Any product can take any form: a zine, a video, a podcast, a slide deck, a branching story, a digital map. Tools are optional (and sometimes involve a learning curve). Choose one only if it helps you say what you want to say.</p></div>
+</section>
+<section id="benchmarks" aria-labelledby="benchmarks-h"><h2 id="benchmarks-h"><span>Benchmarks and Scope</span></h2><div class="clip"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 200" role="img" aria-hidden="true" focusable="false">
+<rect x="40" y="34" width="160" height="150" rx="6" fill="#FFFFFF" stroke="#111" stroke-width="4"/>
+<rect x="40" y="34" width="160" height="34" rx="6" fill="#111"/>
+<circle cx="80" cy="34" r="8" fill="#FFFFFF" stroke="#111" stroke-width="4"/>
+<circle cx="160" cy="34" r="8" fill="#FFFFFF" stroke="#111" stroke-width="4"/>
+<text x="120" y="58" font-family="Arial Black, Arial, sans-serif" font-size="15" text-anchor="middle" fill="#FFFFFF">WEEKS</text>
+<g font-family="Courier New, monospace" font-size="14" font-weight="700" fill="#111" text-anchor="middle">
+<text x="72" y="98">1</text><text x="120" y="98">2</text><text x="168" y="98">3</text>
+<text x="72" y="140">4</text><text x="120" y="140">5</text><text x="168" y="140">6</text></g>
+<path d="M58 80 L86 104 M86 80 L58 104 M106 80 L134 104 M134 80 L106 104" stroke="#111" stroke-width="4" stroke-linecap="round"/>
+<path d="M150 116 Q168 104 186 122 Q192 144 168 152 Q146 150 150 116 Z" fill="none" stroke="#111" stroke-width="3"/>
+<path d="M190 150 L222 116 L230 124 L198 158 L186 162 Z" fill="#BBBBBB" stroke="#111" stroke-width="3" stroke-linejoin="round"/>
+<path d="M222 116 L230 124" stroke="#111" stroke-width="6"/>
+<text x="120" y="176" font-family="Courier New, monospace" font-size="11" text-anchor="middle" fill="#555">showcase!</text>
+</svg>
+</div>
+<div class="block"><h3>Benchmarks</h3><ol class="bench"><li><span class="wk">Week 1:</span><span>Choose your book, your lens, and a tentative product. Explain your choice in a paragraph or voice memo.</span></li><li><span class="wk">Week 2:</span><span>First Brain Bunker check. Find one real-world model you admire and share the link.</span></li><li><span class="wk">Midpoint:</span><span>Conference with your teacher. Confirm or switch your product. Submit your scope statement.</span></li><li><span class="wk">Week 4:</span><span>Prototype. One page, a 30-second clip, three courses, five tracks.</span></li><li><span class="wk">Week 5:</span><span>Full draft. Finalize your rubric using the criterion bank.</span></li><li><span class="wk">Final week:</span><span>Showcase, self-assessment, and display.</span></li></ol></div>
+<div class="block"><h3>Your Scope Statement</h3><p>At the midpoint, complete this sentence:</p>
+<p class="fill">My product will be ________, and it will contain ________.</p>
+<p>Your Execution score measures how well you deliver what you promised, not how big it gets. Going past the spec earns no extra credit. One thing done well beats three things done halfway.</p></div>
+<div class="block"><h3>Plan Early, Build Late</h3><p>You choose your product in week one, but don&#x27;t start building until after your midpoint conference! Until then, your job is reading and logging. The log is where your product&#x27;s best ideas will come from.</p></div>
+</section>
+<section id="rubric" aria-labelledby="rubric-h"><h2 id="rubric-h"><span>How Your Rubric Works</span></h2><div class="clip"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 200" role="img" aria-hidden="true" focusable="false">
+<rect x="56" y="24" width="128" height="166" rx="8" fill="#BBBBBB" stroke="#111" stroke-width="4"/>
+<rect x="70" y="40" width="100" height="140" fill="#FFFFFF" stroke="#111" stroke-width="3"/>
+<rect x="92" y="14" width="56" height="24" rx="5" fill="#111"/>
+<g stroke="#111" stroke-width="3" fill="none" stroke-linecap="round">
+<rect x="80" y="58" width="14" height="14"/><rect x="80" y="88" width="14" height="14"/><rect x="80" y="118" width="14" height="14"/><rect x="80" y="148" width="14" height="14"/>
+<path d="M82 64 L87 70 L98 54"/><path d="M82 94 L87 100 L98 84"/>
+<path d="M102 66 L158 66 M102 96 L150 96 M102 126 L156 126 M102 156 L146 156" stroke="#777"/></g>
+<g transform="rotate(-38 190 120)"><rect x="150" y="112" width="80" height="16" fill="#FFFFFF" stroke="#111" stroke-width="3"/><path d="M150 112 L134 120 L150 128 Z" fill="#FFFFFF" stroke="#111" stroke-width="3" stroke-linejoin="round"/><path d="M134 120 L140 117 L140 123 Z" fill="#111"/><rect x="222" y="112" width="12" height="16" fill="#BBBBBB" stroke="#111" stroke-width="3"/></g>
+</svg>
+</div>
+<div class="block"><h3>Design Your Rubric</h3><p>Your rubric has six rows. Four are set by your teacher. Choose the other two from the bank below and rewrite them to fit your product.</p>
+<p>For every row, write one description of what success looks like. Make sure it&#x27;s specific and relevant to your product. &quot;The playlist flows&quot; is vague. &quot;Each track&#x27;s mood sets up the next and the order follows the book&#x27;s plot&quot; is specific.</p>
+<p>You and your teacher will separately score every row. Those two scores are averaged to determine your final grade.</p></div>
+<div class="block"><h3>Reading the Rubric</h3><p>Each row has three columns:</p><ul class="list"><li>Needs work: where your product falls short of the description</li><li>Success looks like: your description</li><li>Went beyond: where your product exceeds it</li></ul>
+<p>You and your teacher write notes in the outer columns, then assign points for the row.</p></div>
+<div class="block"><h3>A Word on Self-Assessment</h3><p>In my experience, student self-assessment leads to polarized responses: you either give yourself top marks or grade a letter below what your teacher thinks you deserve. Know thyself, reader, and try to render an honest evaluation of the work you&#x27;ve actually done. Honesty is rewarded; deceit, even self-deceit, eventually collapses like a botched soufflé.</p></div>
+</section>
+<section id="fixed" aria-labelledby="fixed-h"><h2 id="fixed-h"><span>The Fixed Rows</span></h2><div class="clip"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 200" role="img" aria-hidden="true" focusable="false">
+<g stroke="#111" stroke-width="4" fill="#FFFFFF">
+<rect x="24" y="30" width="192" height="28" rx="3"/><rect x="24" y="66" width="192" height="28" rx="3"/><rect x="24" y="102" width="192" height="28" rx="3"/><rect x="24" y="138" width="192" height="28" rx="3"/></g>
+<g stroke="#999" stroke-width="2" fill="none"><path d="M60 44 Q90 38 120 46 T180 42"/><path d="M50 80 Q90 74 130 82 T200 78"/><path d="M70 116 Q100 110 130 118 T190 114"/><path d="M44 152 Q80 146 116 154 T196 150"/></g>
+<g fill="#BBBBBB" stroke="#111" stroke-width="3">
+<circle cx="38" cy="44" r="6"/><circle cx="202" cy="44" r="6"/><circle cx="38" cy="80" r="6"/><circle cx="202" cy="80" r="6"/>
+<circle cx="38" cy="116" r="6"/><circle cx="202" cy="116" r="6"/><circle cx="38" cy="152" r="6"/><circle cx="202" cy="152" r="6"/></g>
+<g stroke="#111" stroke-width="2"><path d="M34 44 L42 44 M198 44 L206 44 M34 80 L42 80 M198 80 L206 80 M34 116 L42 116 M198 116 L206 116 M34 152 L42 152 M198 152 L206 152"/></g>
+<path d="M108 150 L108 136 Q108 120 120 120 Q132 120 132 136 L132 150" fill="none" stroke="#111" stroke-width="6"/>
+<rect x="100" y="148" width="40" height="34" rx="5" fill="#111"/>
+<circle cx="120" cy="162" r="5" fill="#FFFFFF"/><path d="M120 164 L120 172" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round"/>
+</svg>
+</div>
+<div class="rows">
+<article class="row"><div class="pts">10 points</div><h3>The Content</h3><p class="def">(the extent to which your work exhibits sound understanding, interpretation, and/or analysis of its subject)</p><div class="sp"><div class="sp-col sp-needs"><div class="sp-h">Needs work</div><div class="lvl"><span class="lvl-name">Managing</span><ul><li>Some grasp of the book; little blending of evidence and interpretation</li><li>Some use of specific passages</li></ul></div><div class="lvl"><span class="lvl-name">Struggling</span><ul><li>Few/no accurate references to the book</li><li>Ideas are not developed</li></ul></div><div class="lvl"><span class="lvl-name">Failing</span><ul><li>Student work somehow shows no sign of the book</li></ul></div></div><div class="sp-col sp-succ"><div class="sp-h">Success looks like</div><p>Your product shows you read closely and understood what you read. It draws on at least three specific passages and it demonstrates an understanding of the book.</p></div><div class="sp-col sp-beyond"><div class="sp-h">Went beyond</div><div class="lvl"><span class="lvl-name">Excelling</span><ul><li>Establishes a strong, accurate grasp of the book&#x27;s plot/setting/characters/ideas</li><li>Develops insight through specific passages, details, or examples</li></ul></div></div></div></article>
+<article class="row"><div class="pts">10 points</div><h3>The Performance</h3><p class="def">(the extent to which your work is skillfully executed, presenting specific and relevant material to its audience)</p><div class="sp"><div class="sp-col sp-needs"><div class="sp-h">Needs work</div><div class="lvl"><span class="lvl-name">Managing</span><ul><li>Develops ideas briefly; uses some detail</li></ul></div><div class="lvl"><span class="lvl-name">Struggling</span><ul><li>Uses incomplete or undeveloped details</li></ul></div><div class="lvl"><span class="lvl-name">Failing</span><ul><li>Doesn’t contain a single idea.</li></ul></div></div><div class="sp-col sp-succ"><div class="sp-h">Success looks like</div><p>Your product delivers what your scope statement promised and meets the spec for your product. It is finished, polished, and on time.</p></div><div class="sp-col sp-beyond"><div class="sp-h">Went beyond</div><div class="lvl"><span class="lvl-name">Excelling</span><ul><li>Develops ideas clearly and fully; uses a wide range of relevant details</li></ul></div></div></div></article>
+<article class="row"><div class="pts">5 points</div><h3>Your Effort</h3><p class="def">(the extent to which you exercise classroom citizenship and self-discipline)</p><div class="sp"><div class="sp-col sp-needs"><div class="sp-h">Needs work</div><div class="lvl"><span class="lvl-name">Managing</span><ul><li>Student completed some previous classwork and activities.</li></ul></div><div class="lvl"><span class="lvl-name">Struggling</span><ul><li>Student completed fragments of previous classwork and activities.</li></ul></div><div class="lvl"><span class="lvl-name">Failing</span><ul><li>Student work is plagiarized.</li><li>Student didn’t do squat.</li></ul></div></div><div class="sp-col sp-succ"><div class="sp-h">Success looks like</div><p>You kept up with your Brain Bunker and met every benchmark: book and lens in week one, a model in week two, a scope statement at the midpoint, a prototype, and a full draft.</p></div><div class="sp-col sp-beyond"><div class="sp-h">Went beyond</div><div class="lvl"><span class="lvl-name">Excelling</span><ul><li>Student completed all previous classwork and activities.</li></ul></div></div></div></article>
+<article class="row"><div class="pts">5 points</div><h3>School&#x27;s Nitpicks</h3><p class="def">(the extent to which your work exhibits conventional grammar, spelling, word usage, etc.)</p><div class="sp"><div class="sp-col sp-needs"><div class="sp-h">Needs work</div><div class="lvl"><span class="lvl-name">Managing</span><ul><li>Student work contains a significant number of grammatical errors.</li><li>Work contains incomplete or poorly structured thoughts.</li></ul></div><div class="lvl"><span class="lvl-name">Struggling</span><ul><li>Student work is unclear and ungrammatical throughout.</li></ul></div><div class="lvl"><span class="lvl-name">Failing</span><ul><li>Student work is incoherent.</li></ul></div></div><div class="sp-col sp-succ"><div class="sp-h">Success looks like</div><p>Your work is clear, direct, and free of errors in grammar, spelling, and word usage. Audio and video count, too: think about whether there&#x27;s a need to provide scripts, captions, and/or on-screen text.</p></div><div class="sp-col sp-beyond"><div class="sp-h">Went beyond</div><div class="lvl"><span class="lvl-name">Excelling</span><ul><li>Student work is clear, direct, engaging, and free of grammatical errors.</li><li>Work is artfully composed.</li></ul></div></div></div></article>
+</div>
+</section>
+<section id="bank" aria-labelledby="bank-h"><h2 id="bank-h"><span>The Criterion Bank</span></h2><div class="clip"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 200" role="img" aria-hidden="true" focusable="false">
+<ellipse cx="116" cy="124" rx="74" ry="52" fill="#FFFFFF" stroke="#111" stroke-width="4"/>
+<path d="M66 86 L58 58 L86 76" fill="#FFFFFF" stroke="#111" stroke-width="4" stroke-linejoin="round"/>
+<ellipse cx="190" cy="124" rx="18" ry="22" fill="#FFFFFF" stroke="#111" stroke-width="4"/>
+<circle cx="185" cy="118" r="3" fill="#111"/><circle cx="185" cy="131" r="3" fill="#111"/>
+<circle cx="158" cy="100" r="5" fill="#111"/>
+<path d="M150 82 Q158 76 166 82" fill="none" stroke="#111" stroke-width="3" stroke-linecap="round"/>
+<path d="M42 118 Q24 112 30 98 Q38 90 44 102" fill="none" stroke="#111" stroke-width="4" stroke-linecap="round"/>
+<g fill="#FFFFFF" stroke="#111" stroke-width="4"><rect x="72" y="164" width="18" height="22" rx="3"/><rect x="134" y="164" width="18" height="22" rx="3"/></g>
+<rect x="96" y="70" width="40" height="7" rx="3" fill="#111"/>
+<circle cx="116" cy="34" r="20" fill="#BBBBBB" stroke="#111" stroke-width="4"/>
+<path d="M116 22 L120 31 L130 31 L122 37 L125 47 L116 41 L107 47 L110 37 L102 31 L112 31 Z" fill="#111"/>
+<path d="M88 26 L80 22 M88 40 L78 42 M144 26 L152 22 M144 40 L154 42" stroke="#111" stroke-width="3" stroke-linecap="round"/>
+</svg>
+</div>
+<div class="rows">
+<article class="row wide"><div class="sub">General</div><h3>The Blueprint</h3><p class="def">(the extent to which your work exhibits direction, shape, and coherence)</p><div class="sp"><div class="sp-col sp-needs"><div class="sp-h">Needs work</div><div class="lvl"><span class="lvl-name">Managing</span><ul><li>Establishes but does not always maintain an appropriate focus; some inconsistencies in sequence of ideas</li><li>Meets some of the requirements specified for this assignment</li></ul></div><div class="lvl"><span class="lvl-name">Struggling</span><ul><li>Lacks an appropriate focus, but suggests some organization</li><li>Meets few/no requirements specified for this assignment</li></ul></div><div class="lvl"><span class="lvl-name">Failing</span><ul><li>Student work is a total mishmash</li></ul></div></div><div class="sp-col sp-succ"><div class="sp-h">Success looks like</div><p>Every part has a job, and the parts add up to a whole. A newcomer can follow it from start to finish.</p></div><div class="sp-col sp-beyond"><div class="sp-h">Went beyond</div><div class="lvl"><span class="lvl-name">Excelling</span><ul><li>Maintains a clear focus; exhibits a logical, coherent structure through appropriate transitions</li><li>Exceeds all requirements specified for this assignment</li></ul></div></div></div></article>
+<article class="row wide"><div class="sub">General</div><h3>The Crowd</h3><p class="def">(the extent to which your work reveals an awareness of audience and purpose)</p><div class="sp"><div class="sp-col sp-needs"><div class="sp-h">Needs work</div><div class="lvl"><span class="lvl-name">Managing</span><ul><li>Some use of concrete language, literary devices, and sensory detail in assignment</li><li>Some effective word choices</li><li>Occasional use of sentence variety</li><li>Some awareness of voice and audience</li></ul></div><div class="lvl"><span class="lvl-name">Struggling</span><ul><li>Little use of concrete language, literary devices or sensory detail in assignment</li><li>Few effective word choices</li><li>Little sentence variety</li><li>Mechanical/unsuitable voice; unaware of audience</li></ul></div><div class="lvl"><span class="lvl-name">Failing</span><ul><li>Student just dumped nonsensical words into a document.</li></ul></div></div><div class="sp-col sp-succ"><div class="sp-h">Success looks like</div><p>The product speaks to a specific audience. Its tone, length, and style suit the people it&#x27;s for.</p></div><div class="sp-col sp-beyond"><div class="sp-h">Went beyond</div><div class="lvl"><span class="lvl-name">Excelling</span><ul><li>Creative, concrete language; uses literary devices and rich sensory detail</li><li>Uses sophisticated, precise vocabulary</li><li>Well varied sentence structure throughout</li><li>Unique voice; strong sense of audience</li></ul></div></div></div></article>
+</div>
+<div class="cards">
+<article class="card"><div class="sub">Criteria for This Lens</div><h4>How this book works</h4><ul class="list"><li>Names a choice the author made and explains what it does to the reader.</li><li>Traces a pattern across the book: an image, a word, a symbol, a structure.</li><li>Shows how the book&#x27;s form shapes its meaning.</li></ul></article>
+<article class="card"><div class="sub">Criteria for This Lens</div><h4>Who this book is for</h4><ul class="list"><li>Names a specific reader and gives them a real reason to pick up the book.</li><li>Warns honestly, with evidence, about who should skip it.</li><li>Matches its tone to the people it&#x27;s trying to reach.</li></ul></article>
+<article class="card"><div class="sub">Criteria for This Lens</div><h4>Where this book meets me</h4><ul class="list"><li>Connects the book and your life in both directions.</li><li>Uses specific memories and details, not generalities.</li><li>Admits where the connection breaks down.</li></ul></article>
+<article class="card"><div class="sub">Criteria for This Lens</div><h4>What else could happen</h4><ul class="list"><li>Keeps the characters&#x27; voices true to the book.</li><li>Makes changes that matter, with believable consequences.</li><li>Explains your choices in an author&#x27;s note.</li></ul></article>
+<article class="card"><div class="sub">Criteria for This Lens</div><h4>Talking back</h4><ul class="list"><li>Shows research: questions or claims an uninformed fan couldn&#x27;t make.</li><li>Takes a position and defends it.</li><li>Treats the book&#x27;s world consistently, as if it were real.</li></ul></article>
+<article class="card"><div class="sub">Criteria for This Lens</div><h4>The world of the book</h4><ul class="list"><li>Ties every item, place, or course to a specific page.</li><li>Builds atmosphere through sensory detail.</li><li>Organizes the world so a newcomer can find their way around it.</li></ul></article>
+</div>
+<div class="cards">
+<article class="card"><div class="sub">Format</div><h4>Writing</h4><ul class="list"><li>Has a distinct voice suited to the product.</li><li>Moves logically from part to part.</li><li>Uses precise, vivid language.</li></ul></article>
+<article class="card"><div class="sub">Format</div><h4>Audio and Video</h4><ul class="list"><li>Holds attention with deliberate pacing.</li><li>Uses sound, music, or images that support the content.</li><li>Sounds or looks clean enough to easily follow.</li></ul></article>
+<article class="card"><div class="sub">Format</div><h4>Visual and Print</h4><ul class="list"><li>Uses layout to guide the eye.</li><li>Makes images and text work together.</li><li>Holds up on display, from a few feet away.</li></ul></article>
+<article class="card"><div class="sub">Format</div><h4>Live Performance</h4><ul class="list"><li>Shows rehearsal: delivery is confident and timed.</li><li>Uses voice, movement, and props with purpose.</li><li>Keeps the audience engaged throughout.</li></ul></article>
+<article class="card"><div class="sub">Format</div><h4>Digital Tools</h4><ul class="list"><li>Works: links, branches, and pins all function.</li><li>Is easy to navigate for someone who hasn&#x27;t seen it.</li><li>Uses the tool because it helps, not for show.</li></ul></article>
+</div>
+</section>
+<section id="builder" aria-labelledby="builder-h"><h2 id="builder-h"><span>Rubric Builder</span></h2><div class="clip"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 200" role="img" aria-hidden="true" focusable="false">
+<path d="M30 30 L210 30 L210 180 L30 180 Z" fill="none" stroke="#111" stroke-width="3" stroke-dasharray="10 8"/>
+<g transform="rotate(-20 110 110)">
+<path d="M108 104 L196 70" stroke="#111" stroke-width="10" stroke-linecap="round"/>
+<path d="M108 116 L196 150" stroke="#111" stroke-width="10" stroke-linecap="round"/>
+<path d="M108 104 L196 70" stroke="#BBBBBB" stroke-width="4" stroke-linecap="round"/>
+<circle cx="104" cy="110" r="6" fill="#FFFFFF" stroke="#111" stroke-width="3"/>
+<ellipse cx="72" cy="86" rx="26" ry="18" fill="#FFFFFF" stroke="#111" stroke-width="7"/>
+<ellipse cx="72" cy="134" rx="26" ry="18" fill="#FFFFFF" stroke="#111" stroke-width="7"/></g>
+<g transform="rotate(14 186 150)">
+<rect x="168" y="106" width="34" height="62" rx="5" fill="#FFFFFF" stroke="#111" stroke-width="4"/>
+<rect x="168" y="150" width="34" height="18" rx="3" fill="#111"/>
+<path d="M172 106 Q185 88 198 106 Z" fill="#BBBBBB" stroke="#111" stroke-width="3"/>
+<text x="185" y="134" font-family="Arial Black, Arial, sans-serif" font-size="11" text-anchor="middle" fill="#111">GLUE</text></g>
+</svg>
+</div>
+<div class="rb" id="rb">
+<div class="rb-meta">
+<label for="rb-name">Name</label><input id="rb-name" type="text" autocomplete="off">
+<label for="rb-book">Book</label><input id="rb-book" type="text" autocomplete="off">
+<label for="rb-product">Product</label><input id="rb-product" type="text" autocomplete="off">
+</div>
+<div id="rb-fixed" class="rb-rows"></div>
+<div class="rb-bank">
+<fieldset class="rb-slot" data-slot="0"><legend>Bank row 1</legend>
+<label class="sr" for="rb-sel-0">Choose a criterion from the bank</label><select id="rb-sel-0"><option value="">Choose a criterion from the bank</option></select>
+<div class="rb-edit" hidden>
+<label for="rb-t-0">Criterion</label><input id="rb-t-0" type="text">
+<label for="rb-n-0">Needs work</label><textarea id="rb-n-0" rows="3"></textarea>
+<label for="rb-s-0">Success looks like</label><textarea id="rb-s-0" rows="3"></textarea>
+<label for="rb-b-0">Went beyond</label><textarea id="rb-b-0" rows="3"></textarea>
+</div></fieldset>
+<fieldset class="rb-slot" data-slot="1"><legend>Bank row 2</legend>
+<label class="sr" for="rb-sel-1">Choose a criterion from the bank</label><select id="rb-sel-1"><option value="">Choose a criterion from the bank</option></select>
+<div class="rb-edit" hidden>
+<label for="rb-t-1">Criterion</label><input id="rb-t-1" type="text">
+<label for="rb-n-1">Needs work</label><textarea id="rb-n-1" rows="3"></textarea>
+<label for="rb-s-1">Success looks like</label><textarea id="rb-s-1" rows="3"></textarea>
+<label for="rb-b-1">Went beyond</label><textarea id="rb-b-1" rows="3"></textarea>
+</div></fieldset>
+</div>
+<div class="rb-actions">
+<button type="button" id="rb-copy">Copy my rubric</button>
+<button type="button" id="rb-print">Print my rubric</button>
+<button type="button" id="rb-clear" class="ghost">Start over</button>
+<span id="rb-status" aria-live="polite"></span>
+</div>
+<div id="rb-confirm" class="rb-confirm" hidden><p>Clear your rubric and start over?</p><button type="button" id="rb-yes">Yes, clear it</button> <button type="button" id="rb-no" class="ghost">Keep it</button></div>
+<div id="rb-fallback" class="rb-fallback" hidden><p>Copying was blocked. The text below is selected; press Ctrl+C or Cmd+C.</p><textarea id="rb-fallback-text" rows="10" readonly></textarea></div>
+</div>
+<div id="rb-print-view" class="rb-print-view" aria-hidden="true"></div>
+<script id="rb-data" type="application/json">{"fixed": [{"title": "The Content", "pts": "10 points", "success": "Your product shows you read closely and understood what you read. It draws on at least three specific passages and it demonstrates an understanding of the book.", "levels": {"Excelling": ["Establishes a strong, accurate grasp of the book's plot/setting/characters/ideas", "Develops insight through specific passages, details, or examples"], "Managing": ["Some grasp of the book; little blending of evidence and interpretation", "Some use of specific passages"], "Struggling": ["Few/no accurate references to the book", "Ideas are not developed"], "Failing": ["Student work somehow shows no sign of the book"]}}, {"title": "The Performance", "pts": "10 points", "success": "Your product delivers what your scope statement promised and meets the spec for your product. It is finished, polished, and on time.", "levels": {"Excelling": ["Develops ideas clearly and fully; uses a wide range of relevant details"], "Managing": ["Develops ideas briefly; uses some detail"], "Struggling": ["Uses incomplete or undeveloped details"], "Failing": ["Doesn’t contain a single idea."]}}, {"title": "Your Effort", "pts": "5 points", "success": "You kept up with your Brain Bunker and met every benchmark: book and lens in week one, a model in week two, a scope statement at the midpoint, a prototype, and a full draft.", "levels": {"Excelling": ["Student completed all previous classwork and activities."], "Managing": ["Student completed some previous classwork and activities."], "Struggling": ["Student completed fragments of previous classwork and activities."], "Failing": ["Student work is plagiarized.", "Student didn’t do squat."]}}, {"title": "School's Nitpicks", "pts": "5 points", "success": "Your work is clear, direct, and free of errors in grammar, spelling, and word usage. Audio and video count, too: think about whether there's a need to provide scripts, captions, and/or on-screen text.", "levels": {"Excelling": ["Student work is clear, direct, engaging, and free of grammatical errors.", "Work is artfully composed."], "Managing": ["Student work contains a significant number of grammatical errors.", "Work contains incomplete or poorly structured thoughts."], "Struggling": ["Student work is unclear and ungrammatical throughout."], "Failing": ["Student work is incoherent."]}}], "bank": [{"group": "General", "title": "The Blueprint", "success": "Every part has a job, and the parts add up to a whole. A newcomer can follow it from start to finish.", "levels": {"Excelling": ["Maintains a clear focus; exhibits a logical, coherent structure through appropriate transitions", "Exceeds all requirements specified for this assignment"], "Managing": ["Establishes but does not always maintain an appropriate focus; some inconsistencies in sequence of ideas", "Meets some of the requirements specified for this assignment"], "Struggling": ["Lacks an appropriate focus, but suggests some organization", "Meets few/no requirements specified for this assignment"], "Failing": ["Student work is a total mishmash"]}}, {"group": "General", "title": "The Crowd", "success": "The product speaks to a specific audience. Its tone, length, and style suit the people it's for.", "levels": {"Excelling": ["Creative, concrete language; uses literary devices and rich sensory detail", "Uses sophisticated, precise vocabulary", "Well varied sentence structure throughout", "Unique voice; strong sense of audience"], "Managing": ["Some use of concrete language, literary devices, and sensory detail in assignment", "Some effective word choices", "Occasional use of sentence variety", "Some awareness of voice and audience"], "Struggling": ["Little use of concrete language, literary devices or sensory detail in assignment", "Few effective word choices", "Little sentence variety", "Mechanical/unsuitable voice; unaware of audience"], "Failing": ["Student just dumped nonsensical words into a document."]}}, {"group": "How this book works", "title": "How this book works", "success": "Names a choice the author made and explains what it does to the reader.", "levels": {}}, {"group": "How this book works", "title": "How this book works", "success": "Traces a pattern across the book: an image, a word, a symbol, a structure.", "levels": {}}, {"group": "How this book works", "title": "How this book works", "success": "Shows how the book's form shapes its meaning.", "levels": {}}, {"group": "Who this book is for", "title": "Who this book is for", "success": "Names a specific reader and gives them a real reason to pick up the book.", "levels": {}}, {"group": "Who this book is for", "title": "Who this book is for", "success": "Warns honestly, with evidence, about who should skip it.", "levels": {}}, {"group": "Who this book is for", "title": "Who this book is for", "success": "Matches its tone to the people it's trying to reach.", "levels": {}}, {"group": "Where this book meets me", "title": "Where this book meets me", "success": "Connects the book and your life in both directions.", "levels": {}}, {"group": "Where this book meets me", "title": "Where this book meets me", "success": "Uses specific memories and details, not generalities.", "levels": {}}, {"group": "Where this book meets me", "title": "Where this book meets me", "success": "Admits where the connection breaks down.", "levels": {}}, {"group": "What else could happen", "title": "What else could happen", "success": "Keeps the characters' voices true to the book.", "levels": {}}, {"group": "What else could happen", "title": "What else could happen", "success": "Makes changes that matter, with believable consequences.", "levels": {}}, {"group": "What else could happen", "title": "What else could happen", "success": "Explains your choices in an author's note.", "levels": {}}, {"group": "Talking back", "title": "Talking back", "success": "Shows research: questions or claims an uninformed fan couldn't make.", "levels": {}}, {"group": "Talking back", "title": "Talking back", "success": "Takes a position and defends it.", "levels": {}}, {"group": "Talking back", "title": "Talking back", "success": "Treats the book's world consistently, as if it were real.", "levels": {}}, {"group": "The world of the book", "title": "The world of the book", "success": "Ties every item, place, or course to a specific page.", "levels": {}}, {"group": "The world of the book", "title": "The world of the book", "success": "Builds atmosphere through sensory detail.", "levels": {}}, {"group": "The world of the book", "title": "The world of the book", "success": "Organizes the world so a newcomer can find their way around it.", "levels": {}}, {"group": "Format: Writing", "title": "Writing", "success": "Has a distinct voice suited to the product.", "levels": {}}, {"group": "Format: Writing", "title": "Writing", "success": "Moves logically from part to part.", "levels": {}}, {"group": "Format: Writing", "title": "Writing", "success": "Uses precise, vivid language.", "levels": {}}, {"group": "Format: Audio and Video", "title": "Audio and Video", "success": "Holds attention with deliberate pacing.", "levels": {}}, {"group": "Format: Audio and Video", "title": "Audio and Video", "success": "Uses sound, music, or images that support the content.", "levels": {}}, {"group": "Format: Audio and Video", "title": "Audio and Video", "success": "Sounds or looks clean enough to easily follow.", "levels": {}}, {"group": "Format: Visual and Print", "title": "Visual and Print", "success": "Uses layout to guide the eye.", "levels": {}}, {"group": "Format: Visual and Print", "title": "Visual and Print", "success": "Makes images and text work together.", "levels": {}}, {"group": "Format: Visual and Print", "title": "Visual and Print", "success": "Holds up on display, from a few feet away.", "levels": {}}, {"group": "Format: Live Performance", "title": "Live Performance", "success": "Shows rehearsal: delivery is confident and timed.", "levels": {}}, {"group": "Format: Live Performance", "title": "Live Performance", "success": "Uses voice, movement, and props with purpose.", "levels": {}}, {"group": "Format: Live Performance", "title": "Live Performance", "success": "Keeps the audience engaged throughout.", "levels": {}}, {"group": "Format: Digital Tools", "title": "Digital Tools", "success": "Works: links, branches, and pins all function.", "levels": {}}, {"group": "Format: Digital Tools", "title": "Digital Tools", "success": "Is easy to navigate for someone who hasn't seen it.", "levels": {}}, {"group": "Format: Digital Tools", "title": "Digital Tools", "success": "Uses the tool because it helps, not for show.", "levels": {}}], "ui": {"SECTION": "Rubric Builder", "NAME": "Name", "BOOK": "Book", "PRODUCT": "Product", "BANK1": "Bank row 1", "BANK2": "Bank row 2", "CHOOSE": "Choose a criterion from the bank", "COPY": "Copy my rubric", "PRINT": "Print my rubric", "CLEAR": "Start over", "CLEAR_ASK": "Clear your rubric and start over?", "CLEAR_YES": "Yes, clear it", "CLEAR_NO": "Keep it", "COPIED": "Copied", "FALLBACK": "Copying was blocked. The text below is selected; press Ctrl+C or Cmd+C.", "SAVED": "Saved on this device", "PRINT_TITLE": "My Rubric"}}</script>
+<script>
+(function(){
+var D=JSON.parse(document.getElementById("rb-data").textContent),U=D.ui,KEY="dyoair-rubric";
+var $=function(id){return document.getElementById(id)};
+var state={name:"",book:"",product:"",slots:[{i:"",t:"",n:"",s:"",b:""},{i:"",t:"",n:"",s:"",b:""}]};
+try{var raw=localStorage.getItem(KEY);if(raw){var p=JSON.parse(raw);if(p&&p.slots&&p.slots.length===2)state=p}}catch(e){}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(state));status(U.SAVED)}catch(e){}}
+var st;function status(m){var el=$("rb-status");el.textContent=m;clearTimeout(st);st=setTimeout(function(){el.textContent=""},2500)}
+function ladderText(lv,which){if(!lv||!lv.Excelling)return"";if(which==="b")return lv.Excelling.join("\n");return["Managing","Struggling","Failing"].map(function(k){return k+": "+lv[k].join(" ")}).join("\n")}
+var fx=$("rb-fixed");
+D.fixed.forEach(function(r){var a=document.createElement("article");a.className="rb-row";
+var h=document.createElement("h3");h.textContent=r.title;var pt=document.createElement("span");pt.className="pts";pt.textContent=r.pts;
+var p=document.createElement("p");var b=document.createElement("b");b.textContent="Success looks like: ";p.appendChild(b);p.appendChild(document.createTextNode(r.success));
+a.appendChild(pt);a.appendChild(h);a.appendChild(p);fx.appendChild(a)});
+[0,1].forEach(function(k){var sel=$("rb-sel-"+k),groups={};
+D.bank.forEach(function(o,i){if(!groups[o.group]){groups[o.group]=document.createElement("optgroup");groups[o.group].label=o.group;sel.appendChild(groups[o.group])}
+var op=document.createElement("option");op.value=String(i);op.textContent=o.group==="General"?o.title:o.success;groups[o.group].appendChild(op)})});
+function fill(){["name","book","product"].forEach(function(f){$("rb-"+f).value=state[f]||""});
+[0,1].forEach(function(k){var s=state.slots[k];$("rb-sel-"+k).value=s.i;var ed=document.querySelector('.rb-slot[data-slot="'+k+'"] .rb-edit');ed.hidden=s.i==="";
+$("rb-t-"+k).value=s.t;$("rb-n-"+k).value=s.n;$("rb-s-"+k).value=s.s;$("rb-b-"+k).value=s.b});lock()}
+function lock(){[0,1].forEach(function(k){var other=state.slots[1-k].i;Array.prototype.forEach.call($("rb-sel-"+k).options,function(o){if(o.value)o.disabled=o.value===other})})}
+["name","book","product"].forEach(function(f){$("rb-"+f).addEventListener("input",function(e){state[f]=e.target.value;save()})});
+[0,1].forEach(function(k){$("rb-sel-"+k).addEventListener("change",function(e){var i=e.target.value,s=state.slots[k];s.i=i;
+if(i!==""){var o=D.bank[+i];s.t=o.title;s.s=o.success;s.n=ladderText(o.levels,"n");s.b=ladderText(o.levels,"b")}else{s.t=s.n=s.s=s.b=""}save();fill()});
+["t","n","s","b"].forEach(function(f){$("rb-"+f+"-"+k).addEventListener("input",function(e){state.slots[k][f]=e.target.value;save()})})});
+function asText(){var L=[U.PRINT_TITLE,U.NAME+": "+state.name,U.BOOK+": "+state.book,U.PRODUCT+": "+state.product,""];
+D.fixed.forEach(function(r){L.push(r.title+" ("+r.pts+")");if(r.levels&&r.levels.Excelling){L.push("Needs work:");L.push(ladderText(r.levels,"n"))}L.push("Success looks like: "+r.success);if(r.levels&&r.levels.Excelling){L.push("Went beyond: "+r.levels.Excelling.join(" "))}L.push("")});
+state.slots.forEach(function(s){if(s.i==="")return;L.push(s.t+" (10 points)");if(s.n)L.push("Needs work:\n"+s.n);L.push("Success looks like: "+s.s);if(s.b)L.push("Went beyond: "+s.b);L.push("")});
+return L.join("\n").trim()}
+$("rb-copy").addEventListener("click",function(){var txt=asText(),ok=false,t=document.createElement("textarea");t.value=txt;t.setAttribute("readonly","");t.style.position="fixed";t.style.left="-9999px";document.body.appendChild(t);t.select();try{ok=document.execCommand("copy")}catch(e){}document.body.removeChild(t);
+if(ok){$("rb-fallback").hidden=true;status(U.COPIED);return}var fb=$("rb-fallback"),ft=$("rb-fallback-text");ft.value=txt;fb.hidden=false;ft.focus();ft.select()});
+function esc(s){var d=document.createElement("div");d.textContent=s;return d.innerHTML}
+function nl(s){return esc(s).replace(/\n/g,"<br>")}
+$("rb-print").addEventListener("click",function(){var h='<h1>'+esc(U.PRINT_TITLE)+'</h1><p class="pv-meta">'+esc(U.NAME)+': '+esc(state.name)+' &nbsp; '+esc(U.BOOK)+': '+esc(state.book)+' &nbsp; '+esc(U.PRODUCT)+': '+esc(state.product)+'</p><table><thead><tr><th></th><th>Needs work</th><th>Success looks like</th><th>Went beyond</th></tr></thead><tbody>';
+D.fixed.forEach(function(r){h+='<tr><td><b>'+esc(r.title)+'</b><br>'+esc(r.pts)+'</td><td>'+nl(ladderText(r.levels,"n"))+'</td><td>'+esc(r.success)+'</td><td>'+nl(ladderText(r.levels,"b"))+'</td></tr>'});
+state.slots.forEach(function(s){if(s.i==="")return;h+='<tr><td><b>'+esc(s.t)+'</b><br>10 points</td><td>'+nl(s.n)+'</td><td>'+nl(s.s)+'</td><td>'+nl(s.b)+'</td></tr>'});
+h+='</tbody></table>';$("rb-print-view").innerHTML=h;document.documentElement.classList.add("print-rubric");window.print()});
+window.addEventListener("afterprint",function(){document.documentElement.classList.remove("print-rubric")});
+$("rb-clear").addEventListener("click",function(){$("rb-confirm").hidden=false;$("rb-no").focus()});
+$("rb-no").addEventListener("click",function(){$("rb-confirm").hidden=true});
+$("rb-yes").addEventListener("click",function(){state={name:"",book:"",product:"",slots:[{i:"",t:"",n:"",s:"",b:""},{i:"",t:"",n:"",s:"",b:""}]};try{localStorage.removeItem(KEY)}catch(e){}$("rb-confirm").hidden=true;fill()});
+fill();
+})();
+</script>
+</section>
+
+</main>
+</div>
+<footer>
+<p class="big">Design Your Own Assessment is a West Essex High School Library project.</p>
+<p>Questions? Ask Mr. Thompson in the library.</p>
+<p><a href="handouts.html">Teachers: print the handouts</a></p>
+<p><a href="/librarylyceum/">WEHS Library Lyceum</a></p>
+</footer>
+<button class="a11y-toggle" type="button" aria-expanded="false" aria-controls="a11y-panel" aria-label="Reading preferences">Aa</button>
+<div class="a11y-panel" id="a11y-panel" role="group" aria-label="Reading preferences" hidden>
+<fieldset class="a11y-group"><legend>Text size</legend><div class="opts" data-dim="size"><button type="button" data-v="small">Small</button><button type="button" data-v="medium">Medium</button><button type="button" data-v="large">Large</button></div></fieldset>
+<fieldset class="a11y-group"><legend>Theme</legend><div class="opts" data-dim="theme"><button type="button" data-v="light">Light</button><button type="button" data-v="dark">Dark</button><button type="button" data-v="contrast">High contrast</button></div></fieldset>
+<fieldset class="a11y-group"><legend>Typeface</legend><div class="opts" data-dim="font"><button type="button" data-v="serif">Serif</button><button type="button" data-v="sans">Sans</button><button type="button" data-v="dyslexic">OpenDyslexic</button></div></fieldset>
+</div>
+<script>
+(function(){
+var d=document.documentElement,K={size:"lyceum-size",theme:"lyceum-theme",font:"lyceum-font"};
+function sync(){document.querySelectorAll(".a11y-group .opts").forEach(function(g){var dim=g.getAttribute("data-dim");g.querySelectorAll("button").forEach(function(b){b.setAttribute("aria-pressed",String(d.dataset[dim]===b.getAttribute("data-v")))})})}
+document.querySelectorAll(".a11y-group button").forEach(function(b){b.addEventListener("click",function(){var dim=b.parentNode.getAttribute("data-dim"),v=b.getAttribute("data-v");d.dataset[dim]=v;try{localStorage.setItem(K[dim],v)}catch(e){}sync()})});
+var t=document.querySelector(".a11y-toggle"),p=document.getElementById("a11y-panel");
+function close(){p.hidden=true;t.setAttribute("aria-expanded","false")}
+t.addEventListener("click",function(){p.hidden=!p.hidden;t.setAttribute("aria-expanded",String(!p.hidden));if(!p.hidden)p.querySelector("button").focus()});
+document.addEventListener("keydown",function(e){if(e.key==="Escape"&&!p.hidden){close();t.focus()}});
+sync();
+})();
+</script>
+</body>
+</html>

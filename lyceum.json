@@ -1,0 +1,61 @@
+{
+  "lyceum": 1,
+  "title": "Design Your Own Assessment",
+  "description": "An independent reading project. Choose a book, log your reading in the Brain Bunker, pick a lens and a product, and design the rubric you’ll be graded on.",
+  "url": "https://mistertlibrary.github.io/dyoair/",
+  "series": "",
+  "course": "",
+  "subjects": [
+    "English Language Arts"
+  ],
+  "sections": [
+    {
+      "title": "The Brain Bunker",
+      "anchor": "#bunker",
+      "keywords": [
+        "reading log",
+        "Brain Bunker"
+      ]
+    },
+    {
+      "title": "Choosing Your Product",
+      "anchor": "#product",
+      "keywords": [
+        "lens",
+        "product",
+        "independent reading"
+      ]
+    },
+    {
+      "title": "Benchmarks and Scope",
+      "anchor": "#benchmarks",
+      "keywords": [
+        "benchmarks",
+        "scope statement"
+      ]
+    },
+    {
+      "title": "How Your Rubric Works",
+      "anchor": "#rubric",
+      "keywords": [
+        "rubric",
+        "self-assessment"
+      ]
+    },
+    {
+      "title": "The Fixed Rows",
+      "anchor": "#fixed",
+      "keywords": [
+        "rubric"
+      ]
+    },
+    {
+      "title": "The Criterion Bank",
+      "anchor": "#bank",
+      "keywords": [
+        "rubric",
+        "criteria"
+      ]
+    }
+  ]
+}
